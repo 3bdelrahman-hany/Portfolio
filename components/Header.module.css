@@ -1,0 +1,168 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  background: rgba(5, 1, 16, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+  transition: all var(--transition-base);
+}
+
+body.light .header {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.logoLink:hover {
+  transform: translateY(-1px);
+}
+
+.logoInitials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-family: var(--font-accent);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: var(--color-gradient);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.logoName {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: var(--text-heading);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .logoName {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gradient);
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink:hover::after {
+  width: 60%;
+}
+
+.navLink.active {
+  color: var(--text-primary);
+}
+
+.navLink.active::after {
+  width: 60%;
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-fast);
+  margin-left: 0.25rem;
+}
+
+.themeToggle:hover {
+  color: var(--color-primary);
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--border-color);
+  transform: translateY(-1px);
+}
+
+.themeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .nav {
+    gap: 0.25rem;
+  }
+
+  .navLink {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .themeToggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .themeIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
