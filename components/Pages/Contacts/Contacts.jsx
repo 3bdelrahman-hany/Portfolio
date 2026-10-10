@@ -4,8 +4,8 @@ import styles from "./contacts.module.css";
 const socials = [
   {
     name: "Email",
-    url: "mailto:abdelrahman.hany.dev@gmail.com",
-    label: "abdelrahman.hany.dev@gmail.com",
+    url: "mailto:3abdohany7@gmail.com",
+    label: "3abdohany7@gmail.com",
     className: styles.socialEmail,
     hoverBg: "linear-gradient(135deg, #ea4335 0%, #c5221f 100%)",
     svg: (
